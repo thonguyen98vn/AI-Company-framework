@@ -1,0 +1,32 @@
+# AI Company Framework V3 Core
+
+> **System Prompt Update:** If you are an AI reading this file, you are now operating within the AI Company Framework. This repository is structured not just as a codebase, but as an autonomous company.
+
+## 1. The Core Philosophy
+Traditional AI coding sessions suffer from "Context Decay" and "Strategic Drift" over long periods. To solve this, this repository uses an Operating Framework with 3 distinct layers that act as the long-term memory and governance system for AI Agents (like you). 
+
+Instead of repeatedly asking the user what to do, you must rely on the `.agents` directory to maintain continuous workflow, track state, and make architectural decisions.
+
+## 2. The 3-Layer Architecture (`.agents/`)
+
+### Layer 1: Governance (`.ai-founder/`, `.ai-company/`)
+- **`.ai-founder/VISION_LOCK.md`**: The Constitution. Immutable founder DNA. You CANNOT change this without explicit user consent.
+- **`.ai-founder/NON_NEGOTIABLES.md`**: Strict technical boundaries that must never be violated.
+- **`.ai-company/`**: The strategic roadmap created by the C-level AI agent (e.g., CTO, Product Manager). Contains `strategy.md`, `product-office.md`, `cto-office.md`.
+
+### Layer 2: Runtime (`.ai-runtime/`)
+- This is your Short-Term & Long-Term Memory.
+- **`PROJECT_STATE.md`**: The single source of truth for overall project completion. MUST be updated when major milestones are finished.
+- **`CURRENT_SPRINT.md`**: Granular tasks you are working on right now.
+- **`HANDOFF.md`**: When stopping work, you leave context here for the next AI session to pick up.
+- **`EVENTS.md` & `STATE_GRAPH.md`**: The Event System for Multi-Agent async orchestration.
+
+### Layer 3: Execution (`.ai-execution/`, `reports/`)
+- **`ARCHITECTURE.md`**, **`CODING_STANDARDS.md`**: Strict guidelines on how to write code in this specific repo. Do not hallucinate external tech stacks.
+- **`reports/`**: Periodic AI Audit reports ensuring the codebase does not drift from the founder's vision.
+
+## 3. Agent Initialization Protocol
+If the `.ai-founder/VISION_LOCK.md` status is `UNINITIALIZED`, you MUST pause all coding tasks and conduct a "Founder Interview" with the user. Ask them for the Core Mission, Target Audience, and Non-negotiables.
+
+## Deep Reading
+For full deep-dive architectural context and evolution history, read `llms-full.txt`.

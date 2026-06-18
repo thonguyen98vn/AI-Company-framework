@@ -1,7 +1,7 @@
 {
   "name": "create-ai-company",
-  "version": "1.0.0",
-  "description": "CLI to scaffold AI Company Framework",
+  "version": "3.0.0",
+  "description": "CLI to scaffold AI Company Framework V3 Core",
   "main": "index.js",
   "type": "module",
   "bin": {
@@ -12,17 +12,27 @@
   },
   "keywords": [
     "ai",
+    "agentic-coding",
+    "cursor-rules",
+    "ai-agents",
     "framework",
-    "agent",
-    "scaffold"
+    "scaffold",
+    "agent-company",
+    "llm",
+    "prompt-engineering",
+    "llms.txt",
+    "ai-seo"
   ],
-  "author": "",
+  "author": "thonguyen98vn",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/thonguyen98vn/AI-Company-framework.git"
+  },
   "license": "MIT",
   "dependencies": {
     "chalk": "^5.6.2",
     "commander": "^15.0.0",
-    "inquirer": "^14.0.2",
-    "ora": "^9.4.0"
+    "inquirer": "^14.0.2"
   },
   "devDependencies": {
     "vitest": "^4.1.9"

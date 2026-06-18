@@ -16,13 +16,11 @@ staleness_risk: high
 > If `UNINITIALIZED`, read the `.agents/ai-company/product-office.md` roadmap and set up the initial tracking checkboxes. Change status to `INITIALIZED`.
 
 ## Current Milestone
-**Milestone 1: Alpha Testing via ZIP (Dogfooding Phase)**
+**Milestone 2: Phase 4 - Global 6-Month Expansion**
 
 ## Overall Progress
-- [x] Establish V3 Core structure
-- [x] Package into a Drop-in Plugin (`.agents`)
-- [x] Graft Self-Bootstrapping protocol into the system
-- [x] Activate and lock the Constitution (Founder DNA) for the framework itself
-- [x] Standardize all system files and templates to English
-- [ ] Prepare public documentation and scripts for Phase 2
-- [ ] Research and design the Event System / State Graph (Track B)
+- [x] Phase 1 & 2: V3 Core architecture and internal Drop-in Plugin testing
+- [x] Phase 3: English Standardization & Hardening CLI for Windows
+- [ ] **Months 1-2**: Launch on ProductHunt/HackerNews & open-source Domain Plugins
+- [ ] **Months 3-4**: Implement Track B Multi-Agent Orchestration features
+- [ ] **Months 5-6**: Develop Enterprise Governance and Automated Auditing tools

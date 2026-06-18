@@ -1,4 +1,18 @@
-# AI Company Framework V3
+---
+layout: home
+
+hero:
+  name: "AI Company Framework"
+  text: "Biến IDE thành công ty ảo"
+  tagline: Giải pháp tối ưu hóa năng suất lập trình cho các Agentic AI (Cursor, Copilot, Antigravity)
+  actions:
+    - theme: brand
+      text: Get Started
+      link: /getting-started
+    - theme: alt
+      text: View on GitHub
+      link: https://github.com/thonguyen98vn/AI-Company-framework
+---
 
 Welcome to the official documentation for the **AI Company Framework V3**.
 

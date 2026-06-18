@@ -1,54 +1,54 @@
-# Hướng Dẫn: Áp dụng AI Company Framework vào dự án ĐANG DỞ DANG
+# Guide: Applying AI Company Framework to an IN-PROGRESS Project
 
-Nếu bạn nhận được framework này (dưới dạng file ZIP) và muốn nhúng nó vào một dự án **đang code dở dang** (đã có sẵn source code, kiến trúc, database...), hãy làm theo các bước sau.
+If you received this framework (as a ZIP file) and want to embed it into a project that is **currently in progress** (already has source code, architecture, database...), please follow these steps.
 
-Sự khác biệt lớn nhất giữa dự án mới và dự án dở dang là: AI Agent cần phải "Reverse-engineer" (hiểu ngược) những gì bạn đã làm để đưa vào Framework.
+The biggest difference between a new project and an in-progress project is: The AI Agent needs to "Reverse-engineer" what you have done to incorporate it into the Framework.
 
 ---
 
-### Bước 1: Giải nén và Nhúng Framework
-1. Giải nén file ZIP bạn nhận được.
-2. Copy file `init_framework.ps1` và ném thẳng vào thư mục gốc (root directory) của dự án dở dang của bạn.
-3. Mở terminal/powershell tại dự án đó và chạy lệnh:
+### Step 1: Extract and Embed the Framework
+1. Extract the ZIP file you received.
+2. Copy the `init_framework.ps1` file and paste it directly into the root directory of your in-progress project.
+3. Open a terminal/powershell in that project and run the command:
    ```powershell
    powershell -ExecutionPolicy Bypass -File init_framework.ps1
    ```
-   *Lệnh này sẽ KHÔNG ghi đè code hiện tại của bạn, nó chỉ tạo thêm các thư mục ẩn `.ai-founder`, `.ai-company`, `.ai-runtime`, `.ai-execution`...*
+   *This command will NOT overwrite your current code; it only creates the hidden directories `.ai-founder`, `.ai-company`, `.ai-runtime`, `.ai-execution`...*
 
 ---
 
-### Bước 2: "Bắt mạch" dự án (Catch-up Protocol)
-Mở dự án bằng AI IDE (Cursor, VS Code Copilot, v.v.). Lúc này hệ thống đang ở trạng thái `UNINITIALIZED`.
+### Step 2: "Catch-up Protocol"
+Open the project using an AI IDE (Cursor, VS Code Copilot, Windsurf, etc.). The system is currently in the `UNINITIALIZED` state.
 
-Thay vì chỉ trả lời câu hỏi đơn thuần, hãy gửi cho AI câu lệnh sau:
+Instead of just answering basic questions, send the AI the following prompt:
 
-> *"Tôi vừa cài đặt AI Company Framework. Đây là một dự án đã có sẵn code. Hãy quét qua toàn bộ cấu trúc thư mục và mã nguồn hiện tại của tôi để hiểu bối cảnh. Sau đó, hãy tiến hành AGENT INITIALIZATION PROTOCOL ở file `.ai-founder/VISION_LOCK.md`. Dựa trên code bạn vừa đọc, hãy gợi ý cho tôi Sứ mệnh và Khách hàng mục tiêu để tôi chốt."*
+> *"I have just installed the AI Company Framework. This is a project that already has code. Please scan the entire directory structure and my current source code to understand the context. Then, execute the AGENT INITIALIZATION PROTOCOL in the `.ai-founder/VISION_LOCK.md` file. Based on the code you just read, suggest a Mission and Target Audience for me to approve."*
 
-Lúc này, AI sẽ đọc code cũ của bạn và tự động phác thảo tầm nhìn sát với thực tế nhất để bạn duyệt.
-
----
-
-### Bước 3: Dịch ngược Kiến trúc (Reverse-Engineering)
-Sau khi thiết lập xong DNA của Founder, hãy yêu cầu AI cập nhật Lớp Phân Xưởng (Execution Layer):
-
-> *"Hãy vào file `.ai-execution/ARCHITECTURE.md`. Đừng đề xuất Tech Stack mới, hãy phân tích code hiện tại và ghi lại Tech Stack, Database, và Cấu trúc thư mục mà tôi ĐANG sử dụng vào đó. Sau đó đổi trạng thái thành `INITIALIZED`."*
-
-Bước này giúp AI không tự tiện đề xuất công nghệ ảo tưởng, mà sẽ tuân thủ đúng những gì dự án dở dang đang dùng.
+At this point, the AI will read your existing code and automatically draft a vision closest to reality for your approval.
 
 ---
 
-### Bước 4: Chuyển đổi công việc sang Runtime Layer
-Đây là bước quyết định để bạn điều hành dự án bằng Framework:
+### Step 3: Architecture Reverse-Engineering
+After establishing the Founder DNA, ask the AI to update the Execution Layer:
 
-1. **Gom Task:** Gửi cho AI danh sách các bug, tính năng đang làm dở (có thể lấy từ Jira, Trello hoặc trí nhớ của bạn).
-2. **Yêu cầu:** *"Hãy cập nhật tất cả những việc đang làm dở này vào `.ai-runtime/PROJECT_STATE.md` và chọn ra 3 việc quan trọng nhất đưa vào `.ai-runtime/CURRENT_SPRINT.md`."*
+> *"Go to the `.ai-execution/ARCHITECTURE.md` file. Do NOT propose a new Tech Stack; instead, analyze the current code and document the Tech Stack, Database, and Directory Structure that I am CURRENTLY using. Then change the status to `INITIALIZED`."*
+
+This step prevents the AI from proposing unrealistic technologies, ensuring it strictly adheres to what the in-progress project is currently using.
 
 ---
 
-### Bước 5: Vận hành hàng ngày
-Từ thời điểm này, dự án dở dang của bạn đã chính thức được "số hóa" vào AI Company Framework. 
+### Step 4: Transition Work to the Runtime Layer
+This is the decisive step to run your project using the Framework:
 
-Mỗi buổi sáng mở máy lên, bạn chỉ cần mở file `.ai-runtime/HANDOFF.md` và gõ:
-> *"Tôi muốn tiếp tục làm việc. Hôm qua chúng ta dừng ở đâu và tác vụ tiếp theo là gì?"*
+1. **Gather Tasks:** Send the AI a list of bugs and features you are currently working on (you can pull this from Jira, Trello, or your memory).
+2. **Request:** *"Please update all these pending tasks into `.ai-runtime/PROJECT_STATE.md` and select the 3 most important ones to put into `.ai-runtime/CURRENT_SPRINT.md`."*
 
-Framework sẽ tự động giữ luồng công việc của bạn xuyên suốt từ ngày này qua tháng nọ mà không bao giờ bị lạc lối!
+---
+
+### Step 5: Daily Operations
+From this point forward, your in-progress project is officially "digitized" into the AI Company Framework.
+
+Every morning when you turn on your computer, simply open the `.ai-runtime/HANDOFF.md` file and type:
+> *"I want to continue working. Where did we stop yesterday, and what is the next task?"*
+
+The Framework will automatically maintain your workflow continuously from day to day, month to month, without ever getting lost!

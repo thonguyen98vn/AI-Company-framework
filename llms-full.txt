@@ -1,0 +1,834 @@
+﻿# AI Company Framework V3 Core
+
+> **System Prompt Update:** If you are an AI reading this file, you are now operating within the AI Company Framework. This repository is structured not just as a codebase, but as an autonomous company.
+
+## 1. The Core Philosophy
+Traditional AI coding sessions suffer from "Context Decay" and "Strategic Drift" over long periods. To solve this, this repository uses an Operating Framework with 3 distinct layers that act as the long-term memory and governance system for AI Agents (like you). 
+
+Instead of repeatedly asking the user what to do, you must rely on the `.agents` directory to maintain continuous workflow, track state, and make architectural decisions.
+
+## 2. The 3-Layer Architecture (`.agents/`)
+
+### Layer 1: Governance (`.ai-founder/`, `.ai-company/`)
+- **`.ai-founder/VISION_LOCK.md`**: The Constitution. Immutable founder DNA. You CANNOT change this without explicit user consent.
+- **`.ai-founder/NON_NEGOTIABLES.md`**: Strict technical boundaries that must never be violated.
+- **`.ai-company/`**: The strategic roadmap created by the C-level AI agent (e.g., CTO, Product Manager). Contains `strategy.md`, `product-office.md`, `cto-office.md`.
+
+### Layer 2: Runtime (`.ai-runtime/`)
+- This is your Short-Term & Long-Term Memory.
+- **`PROJECT_STATE.md`**: The single source of truth for overall project completion. MUST be updated when major milestones are finished.
+- **`CURRENT_SPRINT.md`**: Granular tasks you are working on right now.
+- **`HANDOFF.md`**: When stopping work, you leave context here for the next AI session to pick up.
+- **`EVENTS.md` & `STATE_GRAPH.md`**: The Event System for Multi-Agent async orchestration.
+
+### Layer 3: Execution (`.ai-execution/`, `reports/`)
+- **`ARCHITECTURE.md`**, **`CODING_STANDARDS.md`**: Strict guidelines on how to write code in this specific repo. Do not hallucinate external tech stacks.
+- **`reports/`**: Periodic AI Audit reports ensuring the codebase does not drift from the founder's vision.
+
+## 3. Agent Initialization Protocol
+If the `.ai-founder/VISION_LOCK.md` status is `UNINITIALIZED`, you MUST pause all coding tasks and conduct a "Founder Interview" with the user. Ask them for the Core Mission, Target Audience, and Non-negotiables.
+
+## Deep Reading
+For full deep-dive architectural context and evolution history, read `llms-full.txt`.
+# AI Company Framework V3
+
+[![NPM Version](https://img.shields.io/npm/v/create-ai-company.svg)](https://www.npmjs.com/package/create-ai-company)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Docs](https://img.shields.io/badge/docs-vitepress-blue)](https://thonguyen98vn.github.io/AI-Company-framework/)
+
+Welcome to the **AI Company Framework V3**. This framework turns any software repository into a self-governing, autonomous "AI-Native Company". 
+
+By establishing a structured hierarchy of **Governance**, **Memory**, and **Execution**, it allows AI Agents (like Cursor, GitHub Copilot, Cline, or Antigravity) to act as your C-level executives, product managers, and engineers without losing context or drifting from your original vision.
+
+## 検 Why this Framework?
+Standard AI tools lose context over long sessions. They don't know the difference between a minor feature tweak and a core architectural change. This framework introduces:
+- **Founder DNA:** Hard-coded vision and non-negotiables that the AI cannot alter.
+- **State & Event Systems:** Agents can "hand off" tasks to other agents asynchronously.
+- **Continuous Memory:** A built-in mechanism for the AI to leave notes for itself.
+- **Auto-Trigger Onboarding:** The AI intercepts the very first message and interviews you (the Founder) to set up the company.
+
+## 噫 Quick Start
+
+The fastest way to initialize the framework in your project is via NPM:
+
+```bash
+npx create-ai-company@latest
+```
+
+*(You can also run it inside an existing project to inject the `.agents` brain without overwriting your code!)*
+
+### Next Steps:
+1. Open your project in an AI-powered IDE (Cursor, VSCode with Copilot).
+2. Open the AI Chat and type: `hello`.
+3. The Agent will intercept your request and begin the **Founder Interview**.
+4. Answer the questions to shape the `VISION_LOCK.md`.
+
+## 唐 Architecture
+
+The framework operates via the `.agents` directory:
+- `.agents/ai-founder/`: The Constitution. Immutable vision and core rules.
+- `.agents/ai-company/`: Governance & Strategy. Where the CTO/CPO plans the roadmap.
+- `.agents/ai-runtime/`: Memory & Handoff. Short-term session memory and state graphs.
+- `.agents/ai-execution/`: The Factory. Coding standards, testing, and deployment rules.
+- `.agents/ai-domains/`: Specialized industry presets (SaaS, Data, Web3, etc.).
+- `docs/`: In-depth documentation on how to extend the framework.
+
+答 **[Read the Full Documentation](https://thonguyen98vn.github.io/AI-Company-framework/)**
+
+## ､・Contributing
+We welcome contributions! Please see `CONTRIBUTING.md` for details on how to add new Domain Presets or improve the core framework.
+
+## 糖 License
+This project is licensed under the MIT License - see the `LICENSE` file for details.
+# AI Company Framework V3 Core
+
+M盻冲 **Operating Framework** giﾃｺp bi蘯ｿn repository c盻ｧa b蘯｡n thﾃnh m盻冲 "AI-Native Software Company" v盻嬖 kh蘯｣ nﾄハg t盻ｱ v蘯ｭn hﾃnh, duy trﾃｬ ﾄ黛ｻ杵h hﾆｰ盻嬾g (alignment) vﾃ ch盻創g l蘯｡i tﾃｬnh tr蘯｡ng m蘯･t ng盻ｯ c蘯｣nh (context decay) c盻ｧa cﾃ｡c AI Agents trong dﾃi h蘯｡n.
+
+## Tri蘯ｿt lﾃｽ c盻奏 lﾃｵi
+Framework khﾃｴng ph蘯｣i lﾃ m盻冲 b盻・sﾆｰu t蘯ｭp prompt hay tﾃi li盻㎡ tﾄｩnh. Nﾃｳ lﾃ m盻冲 h盻・ﾄ訴盻「 hﾃnh th盻ｱc th盻･ dﾃnh cho AI. M盻絞 file ﾄ黛ｻ「 lﾃ m盻冲 "th盻ｱc th盻・s盻創g" cﾃｳ ch盻ｩa metadata vﾃ cﾃ｡c **Giao th盻ｩc Kh盻殃 t蘯｡o (Initialization Protocols)** ﾄ黛ｻ・ﾄ訴盻「 khi盻ハ hﾃnh vi c盻ｧa AI Agent.
+
+## Cﾃ｡ch nhﾃｺng Framework vﾃo m盻冲 d盻ｱ ﾃ｡n m盻嬖
+
+ﾄ雪ｻ・ﾃ｡p d盻･ng AI Company Framework cho b蘯･t k盻ｳ d盻ｱ ﾃ｡n nﾃo c盻ｧa b蘯｡n (SaaS, Game, Web App...), hﾃ｣y th盻ｱc hi盻㌻ theo 3 bﾆｰ盻嫩 c盻ｱc k盻ｳ ﾄ柁｡n gi蘯｣n:
+
+### Bﾆｰ盻嫩 1: Copy Script kh盻殃 t蘯｡o
+Copy file `init_framework.ps1` t盻ｫ repository nﾃy vﾃ dﾃ｡n vﾃo thﾆｰ m盻･c g盻祖 (root directory) c盻ｧa d盻ｱ ﾃ｡n m盻嬖 c盻ｧa b蘯｡n.
+
+### Bﾆｰ盻嫩 2: Ch蘯｡y Script
+M盻・terminal/powershell t蘯｡i thﾆｰ m盻･c d盻ｱ ﾃ｡n m盻嬖 vﾃ ch蘯｡y l盻㌻h:
+```powershell
+powershell -ExecutionPolicy Bypass -File init_framework.ps1
+```
+Script s蘯ｽ t盻ｱ ﾄ黛ｻ冢g sinh ra cﾃ｡c thﾆｰ m盻･c 蘯ｩn `.ai-founder`, `.ai-company`, `.ai-runtime`, `.ai-execution` vﾃ `reports` cﾃｹng cﾃ｡c file v盻嬖 tr蘯｡ng thﾃ｡i `UNINITIALIZED`.
+
+### Bﾆｰ盻嫩 3: ﾄ静｡nh th盻ｩc Agent (Wake up the Agent)
+M盻・d盻ｱ ﾃ｡n b蘯ｱng trﾃｬnh so蘯｡n th蘯｣o cﾃｳ AI (nhﾆｰ VS Code v盻嬖 Copilot, Cursor, ho蘯ｷc Gemini IDE), m盻・c盻ｭa s盻・Chat vﾃ g盻ｭi cﾃ｢u l盻㌻h ﾄ黛ｺｧu tiﾃｪn:
+
+> *"Hﾃ｣y ﾄ黛ｻ皇 file `.ai-founder/VISION_LOCK.md` vﾃ th盻ｱc hi盻㌻ AGENT INITIALIZATION PROTOCOL."*
+
+Ngay l蘯ｭp t盻ｩc, AI Agent s蘯ｽ ﾄ黛ｻ皇 hi盻ブ "lu蘯ｭt chﾆ｡i", nh蘯ｭn ra tr蘯｡ng thﾃ｡i `UNINITIALIZED` vﾃ b蘯ｯt ﾄ黛ｺｧu quay sang ph盻熟g v蘯･n b蘯｡n (Founder) ﾄ黛ｻ・l蘯･y thﾃｴng tin. Sau ﾄ妥ｳ, nﾃｳ s蘯ｽ t盻ｱ ﾄ黛ｻ冢g lan truy盻］ ﾄ黛ｻ・thi蘯ｿt l蘯ｭp cﾃ｡c l盻孅 chi蘯ｿn lﾆｰ盻｣c (`.ai-company`) vﾃ ki蘯ｿn trﾃｺc (`.ai-execution`) cho d盻ｱ ﾃ｡n c盻ｧa b蘯｡n!
+
+## C蘯･u trﾃｺc thﾆｰ m盻･c
+
+- `.ai-founder/`: Nﾆ｡i ch盻ｩa "Hi蘯ｿn phﾃ｡p" vﾃ DNA c盻ｧa Founder. AI khﾃｴng ﾄ柁ｰ盻｣c t盻ｱ ﾃｽ s盻ｭa ﾄ黛ｻ品.
+- `.ai-company/`: L盻孅 Governance. Nﾆ｡i Agent ﾄ妥ｳng vai trﾃｲ C-Level (CTO, Product Manager) l蘯ｭp chi蘯ｿn lﾆｰ盻｣c vﾃ roadmap.
+- `.ai-runtime/`: H盻・th盻創g B盻・nh盻・(Memory) & Bﾃn giao (Handoff). Ch盻ｩa tr蘯｡ng thﾃ｡i d盻ｱ ﾃ｡n vﾃ lﾃｽ do ra quy蘯ｿt ﾄ黛ｻ杵h, giﾃｺp cﾃ｡c Agent duy trﾃｬ m蘯｡ch lﾃm vi盻㌘ khﾃｴng ﾄ黛ｻｩt gﾃ｣y.
+- `.ai-execution/`: Phﾃ｢n xﾆｰ盻殤g Code. Ch盻ｩa tiﾃｪu chu蘯ｩn ki蘯ｿn trﾃｺc, coding, testing, vﾃ deploy.
+- `.ai-domains/`: (Tﾃｹy ch盻肱) Ch盻ｩa cﾃ｡c plugin ki蘯ｿn th盻ｩc chuyﾃｪn ngﾃnh (vd: Trading AI, SaaS, v.v.).
+- `reports/`: Nﾆ｡i ch盻ｩa cﾃ｡c biﾃｪn b蘯｣n ki盻ノ toﾃ｡n ﾄ黛ｻ杵h k盻ｳ (Audits) ﾄ黛ｻ・phﾃｲng ch盻創g ﾄ訴 ch盻㌘h ﾄ黛ｻ杵h hﾆｰ盻嬾g (Strategic Drift).
+# Hﾆｰ盻嬾g D蘯ｫn: ﾃ｝ d盻･ng AI Company Framework vﾃo d盻ｱ ﾃ｡n ﾄ植NG D盻・DANG
+
+N蘯ｿu b蘯｡n nh蘯ｭn ﾄ柁ｰ盻｣c framework nﾃy (dﾆｰ盻嬖 d蘯｡ng file ZIP) vﾃ mu盻創 nhﾃｺng nﾃｳ vﾃo m盻冲 d盻ｱ ﾃ｡n **ﾄ疎ng code d盻・dang** (ﾄ妥｣ cﾃｳ s蘯ｵn source code, ki蘯ｿn trﾃｺc, database...), hﾃ｣y lﾃm theo cﾃ｡c bﾆｰ盻嫩 sau.
+
+S盻ｱ khﾃ｡c bi盻㏄ l盻嬾 nh蘯･t gi盻ｯa d盻ｱ ﾃ｡n m盻嬖 vﾃ d盻ｱ ﾃ｡n d盻・dang lﾃ: AI Agent c蘯ｧn ph蘯｣i "Reverse-engineer" (hi盻ブ ngﾆｰ盻｣c) nh盻ｯng gﾃｬ b蘯｡n ﾄ妥｣ lﾃm ﾄ黛ｻ・ﾄ柁ｰa vﾃo Framework.
+
+---
+
+### Bﾆｰ盻嫩 1: Gi蘯｣i nﾃｩn vﾃ Nhﾃｺng Framework
+1. Gi蘯｣i nﾃｩn file ZIP b蘯｡n nh蘯ｭn ﾄ柁ｰ盻｣c.
+2. Copy file `init_framework.ps1` vﾃ nﾃｩm th蘯ｳng vﾃo thﾆｰ m盻･c g盻祖 (root directory) c盻ｧa d盻ｱ ﾃ｡n d盻・dang c盻ｧa b蘯｡n.
+3. M盻・terminal/powershell t蘯｡i d盻ｱ ﾃ｡n ﾄ妥ｳ vﾃ ch蘯｡y l盻㌻h:
+   ```powershell
+   powershell -ExecutionPolicy Bypass -File init_framework.ps1
+   ```
+   *L盻㌻h nﾃy s蘯ｽ KHﾃ年G ghi ﾄ妥ｨ code hi盻㌻ t蘯｡i c盻ｧa b蘯｡n, nﾃｳ ch盻・t蘯｡o thﾃｪm cﾃ｡c thﾆｰ m盻･c 蘯ｩn `.ai-founder`, `.ai-company`, `.ai-runtime`, `.ai-execution`...*
+
+---
+
+### Bﾆｰ盻嫩 2: "B蘯ｯt m蘯｡ch" d盻ｱ ﾃ｡n (Catch-up Protocol)
+M盻・d盻ｱ ﾃ｡n b蘯ｱng AI IDE (Cursor, VS Code Copilot, v.v.). Lﾃｺc nﾃy h盻・th盻創g ﾄ疎ng 盻・tr蘯｡ng thﾃ｡i `UNINITIALIZED`.
+
+Thay vﾃｬ ch盻・tr蘯｣ l盻拱 cﾃ｢u h盻淑 ﾄ柁｡n thu蘯ｧn, hﾃ｣y g盻ｭi cho AI cﾃ｢u l盻㌻h sau:
+
+> *"Tﾃｴi v盻ｫa cﾃi ﾄ黛ｺｷt AI Company Framework. ﾄ静｢y lﾃ m盻冲 d盻ｱ ﾃ｡n ﾄ妥｣ cﾃｳ s蘯ｵn code. Hﾃ｣y quﾃｩt qua toﾃn b盻・c蘯･u trﾃｺc thﾆｰ m盻･c vﾃ mﾃ｣ ngu盻渡 hi盻㌻ t蘯｡i c盻ｧa tﾃｴi ﾄ黛ｻ・hi盻ブ b盻訴 c蘯｣nh. Sau ﾄ妥ｳ, hﾃ｣y ti蘯ｿn hﾃnh AGENT INITIALIZATION PROTOCOL 盻・file `.ai-founder/VISION_LOCK.md`. D盻ｱa trﾃｪn code b蘯｡n v盻ｫa ﾄ黛ｻ皇, hﾃ｣y g盻｣i ﾃｽ cho tﾃｴi S盻ｩ m盻㌻h vﾃ Khﾃ｡ch hﾃng m盻･c tiﾃｪu ﾄ黛ｻ・tﾃｴi ch盻奏."*
+
+Lﾃｺc nﾃy, AI s蘯ｽ ﾄ黛ｻ皇 code cﾅｩ c盻ｧa b蘯｡n vﾃ t盻ｱ ﾄ黛ｻ冢g phﾃ｡c th蘯｣o t蘯ｧm nhﾃｬn sﾃ｡t v盻嬖 th盻ｱc t蘯ｿ nh蘯･t ﾄ黛ｻ・b蘯｡n duy盻㏄.
+
+---
+
+### Bﾆｰ盻嫩 3: D盻議h ngﾆｰ盻｣c Ki蘯ｿn trﾃｺc (Reverse-Engineering)
+Sau khi thi蘯ｿt l蘯ｭp xong DNA c盻ｧa Founder, hﾃ｣y yﾃｪu c蘯ｧu AI c蘯ｭp nh蘯ｭt L盻孅 Phﾃ｢n Xﾆｰ盻殤g (Execution Layer):
+
+> *"Hﾃ｣y vﾃo file `.ai-execution/ARCHITECTURE.md`. ﾄ雪ｻｫng ﾄ黛ｻ・xu蘯･t Tech Stack m盻嬖, hﾃ｣y phﾃ｢n tﾃｭch code hi盻㌻ t蘯｡i vﾃ ghi l蘯｡i Tech Stack, Database, vﾃ C蘯･u trﾃｺc thﾆｰ m盻･c mﾃ tﾃｴi ﾄ植NG s盻ｭ d盻･ng vﾃo ﾄ妥ｳ. Sau ﾄ妥ｳ ﾄ黛ｻ品 tr蘯｡ng thﾃ｡i thﾃnh `INITIALIZED`."*
+
+Bﾆｰ盻嫩 nﾃy giﾃｺp AI khﾃｴng t盻ｱ ti盻㌻ ﾄ黛ｻ・xu蘯･t cﾃｴng ngh盻・蘯｣o tﾆｰ盻殤g, mﾃ s蘯ｽ tuﾃ｢n th盻ｧ ﾄ妥ｺng nh盻ｯng gﾃｬ d盻ｱ ﾃ｡n d盻・dang ﾄ疎ng dﾃｹng.
+
+---
+
+### Bﾆｰ盻嫩 4: Chuy盻ハ ﾄ黛ｻ品 cﾃｴng vi盻㌘ sang Runtime Layer
+ﾄ静｢y lﾃ bﾆｰ盻嫩 quy蘯ｿt ﾄ黛ｻ杵h ﾄ黛ｻ・b蘯｡n ﾄ訴盻「 hﾃnh d盻ｱ ﾃ｡n b蘯ｱng Framework:
+
+1. **Gom Task:** G盻ｭi cho AI danh sﾃ｡ch cﾃ｡c bug, tﾃｭnh nﾄハg ﾄ疎ng lﾃm d盻・(cﾃｳ th盻・l蘯･y t盻ｫ Jira, Trello ho蘯ｷc trﾃｭ nh盻・c盻ｧa b蘯｡n).
+2. **Yﾃｪu c蘯ｧu:** *"Hﾃ｣y c蘯ｭp nh蘯ｭt t蘯･t c蘯｣ nh盻ｯng vi盻㌘ ﾄ疎ng lﾃm d盻・nﾃy vﾃo `.ai-runtime/PROJECT_STATE.md` vﾃ ch盻肱 ra 3 vi盻㌘ quan tr盻肱g nh蘯･t ﾄ柁ｰa vﾃo `.ai-runtime/CURRENT_SPRINT.md`."*
+
+---
+
+### Bﾆｰ盻嫩 5: V蘯ｭn hﾃnh hﾃng ngﾃy
+T盻ｫ th盻拱 ﾄ訴盻ノ nﾃy, d盻ｱ ﾃ｡n d盻・dang c盻ｧa b蘯｡n ﾄ妥｣ chﾃｭnh th盻ｩc ﾄ柁ｰ盻｣c "s盻・hﾃｳa" vﾃo AI Company Framework. 
+
+M盻擁 bu盻品 sﾃ｡ng m盻・mﾃ｡y lﾃｪn, b蘯｡n ch盻・c蘯ｧn m盻・file `.ai-runtime/HANDOFF.md` vﾃ gﾃｵ:
+> *"Tﾃｴi mu盻創 ti蘯ｿp t盻･c lﾃm vi盻㌘. Hﾃｴm qua chﾃｺng ta d盻ｫng 盻・ﾄ妥｢u vﾃ tﾃ｡c v盻･ ti蘯ｿp theo lﾃ gﾃｬ?"*
+
+Framework s蘯ｽ t盻ｱ ﾄ黛ｻ冢g gi盻ｯ lu盻渡g cﾃｴng vi盻㌘ c盻ｧa b蘯｡n xuyﾃｪn su盻奏 t盻ｫ ngﾃy nﾃy qua thﾃ｡ng n盻・mﾃ khﾃｴng bao gi盻・b盻・l蘯｡c l盻訴!
+ﾄ静｢y lﾃ b蘯｣n tﾃｳm t蘯ｯt cﾃｴ ﾄ黛ｻ肱g nhﾆｰng ﾄ黛ｺｧy ﾄ黛ｻｧ v盻・quﾃ｡ trﾃｬnh ti蘯ｿn hﾃｳa t盻ｫ ﾃｽ tﾆｰ盻殤g ban ﾄ黛ｺｧu ﾄ黛ｺｿn **AI Company Framework V3 Core**.
+
+# Tﾃｪn d盻ｱ ﾃ｡n
+
+```text
+AI Company Framework
+```
+
+M盻･c tiﾃｪu:
+
+```text
+Bi蘯ｿn m盻冲 repository thﾃnh m盻冲 AI-Native Software Company
+cﾃｳ kh蘯｣ nﾄハg:
+
+- t盻ｱ v蘯ｭn hﾃnh
+- t盻ｱ ﾄ妥｡nh giﾃ｡
+- t盻ｱ c蘯｣i ti蘯ｿn
+- ch盻創g context decay
+- ch盻創g strategic drift
+
+trong th盻拱 gian dﾃi (18-24 thﾃ｡ng+)
+v盻嬖 nhi盻「 AI agents khﾃ｡c nhau.
+```
+
+---
+
+# Giai ﾄ双蘯｡n 1 窶・AI Software Company V2
+
+Ban ﾄ黛ｺｧu framework ﾄ柁ｰ盻｣c thi蘯ｿt k蘯ｿ theo mﾃｴ hﾃｬnh cﾃｴng ty truy盻］ th盻創g:
+
+```text
+.ai-company/
+
+00-vision
+01-strategy-office
+02-user-council
+03-product-office
+04-cto-office
+05-engineering
+06-qa-office
+07-security-office
+08-growth-office
+09-research-lab
+10-board-room
+```
+
+Tri蘯ｿt lﾃｽ:
+
+```text
+AI Agent = nhﾃ｢n viﾃｪn
+
+Office = phﾃｲng ban
+
+Governance = cﾃｴng ty
+```
+
+ﾆｯu ﾄ訴盻ノ:
+
+```text
+- ﾄ黛ｺｧy ﾄ黛ｻｧ
+- d盻・hi盻ブ
+- gi盻創g cﾃｴng ty th蘯ｭt
+```
+
+Nhﾆｰ盻｣c ﾄ訴盻ノ:
+
+```text
+- nhi盻「 file
+- thiﾃｪn v盻・governance
+- chﾆｰa gi蘯｣i quy蘯ｿt workflow h蘯ｱng ngﾃy
+```
+
+---
+
+# Giai ﾄ双蘯｡n 2 窶・Ph蘯｣n bi盻㌻ quan tr盻肱g
+
+M盻冲 ph蘯｣n bi盻㌻ xu蘯･t hi盻㌻:
+
+```text
+Agent khﾃｴng ph蘯｣i con ngﾆｰ盻拱.
+```
+
+V蘯･n ﾄ黛ｻ・
+
+Agent m盻・repo c蘯ｧn bi蘯ｿt:
+
+```text
+Project ﾄ疎ng 盻・ﾄ妥｢u?
+
+Task ti蘯ｿp theo lﾃ gﾃｬ?
+
+Tﾃｴi ph蘯｣i lﾃm gﾃｬ bﾃ｢y gi盻・
+```
+
+Trong khi V2 ch盻ｧ y蘯ｿu tr蘯｣ l盻拱:
+
+```text
+T蘯｡i sao lﾃm?
+
+Nﾃｪn lﾃm gﾃｬ?
+```
+
+Thi蘯ｿu:
+
+```text
+State Management
+Execution Flow
+Session Context
+```
+
+---
+
+# Giai ﾄ双蘯｡n 3 窶・Nh蘯ｭn ra 3 Layer
+
+Framework ﾄ柁ｰ盻｣c tﾃ｡i c蘯･u trﾃｺc.
+
+## Layer 1
+
+Governance
+
+Tr蘯｣ l盻拱:
+
+```text
+Why?
+What?
+Are we on the right path?
+```
+
+---
+
+## Layer 2
+
+Runtime
+
+Tr蘯｣ l盻拱:
+
+```text
+Current State
+Next Action
+Current Sprint
+```
+
+---
+
+## Layer 3
+
+Execution
+
+Tr蘯｣ l盻拱:
+
+```text
+How?
+```
+
+---
+
+Sﾆ｡ ﾄ黛ｻ・
+
+```text
+Governance
+      竊・Runtime
+      竊・Execution
+```
+
+---
+
+# Giai ﾄ双蘯｡n 4 窶・Explicit Bridges
+
+Nh蘯ｭn ra:
+
+```text
+Layer t盻渡 t蘯｡i chﾆｰa ﾄ黛ｻｧ.
+
+Ph蘯｣i cﾃｳ bridges.
+```
+
+---
+
+## Bridge A
+
+Governance 竊・Runtime
+
+```text
+Product Priorities
+        竊・Current Sprint
+```
+
+---
+
+## Bridge B
+
+Runtime 竊・Execution
+
+```text
+Tasks
+      竊・Code
+```
+
+---
+
+## Bridge C
+
+Execution 竊・Runtime
+
+```text
+Code Results
+      竊・Handoff
+```
+
+---
+
+## Bridge D
+
+Runtime 竊・Governance
+
+```text
+Decisions
+      竊・Board Review
+```
+
+---
+
+## Bridge E
+
+Governance Audit Bridge
+
+```text
+Board Review
+       竊・Runtime Repair Tasks
+```
+
+---
+
+# Giai ﾄ双蘯｡n 5 窶・Context Decay
+
+M盻冲 phﾃ｡t hi盻㌻ quan tr盻肱g:
+
+Decay khﾃｴng ch盻・x蘯｣y ra 盻・Runtime.
+
+---
+
+## Governance Decay
+
+```text
+Vision khﾃｴng ai ﾄ黛ｻ皇.
+
+Roadmap l盻擁 th盻拱.
+```
+
+---
+
+## Runtime Decay
+
+```text
+Project State stale.
+```
+
+---
+
+## Execution Decay
+
+```text
+Coding Standards b盻・b盻・qua.
+```
+
+---
+
+Khﾃ｡i ni盻㍊ m盻嬖:
+
+```text
+Document Lifecycle
+```
+
+M盻擁 file ph蘯｣i cﾃｳ metadata:
+
+```yaml
+owner:
+review_cadence:
+last_reviewed:
+staleness_risk:
+```
+
+---
+
+# Giai ﾄ双蘯｡n 6 窶・Strategic Decay
+
+Phﾃ｡t hi盻㌻ nguy hi盻ノ hﾆ｡n document decay:
+
+```text
+Strategic Decay
+```
+
+T盻ｩc lﾃ:
+
+```text
+M盻絞 file ﾄ黛ｻ「 m盻嬖.
+
+M盻絞 bﾃ｡o cﾃ｡o ﾄ黛ｻ「 xanh.
+
+Nhﾆｰng s蘯｣n ph蘯ｩm v蘯ｫn ﾄ訴 sai hﾆｰ盻嬾g.
+```
+
+ﾄ静｢y tr盻・thﾃnh bﾃi toﾃ｡n trung tﾃ｢m c盻ｧa framework.
+
+---
+
+# Giai ﾄ双蘯｡n 7 窶・CONTEXT_HEALTH
+
+Thay vﾃｬ m盻冲 score duy nh蘯･t.
+
+Framework dﾃｹng:
+
+## Freshness Score
+
+```text
+Tﾃi li盻㎡ cﾃｲn m盻嬖 khﾃｴng?
+```
+
+---
+
+## Alignment Score
+
+```text
+Cﾃｳ cﾃｲn bﾃ｡m Vision khﾃｴng?
+```
+
+---
+
+## Confidence Score
+
+```text
+Agent ch蘯ｯc ch蘯ｯn t盻嬖 m盻ｩc nﾃo?
+```
+
+---
+
+Ngoﾃi ra:
+
+```text
+Agent Assessment
++
+Telemetry
++
+Board Audit
+```
+
+cﾃｹng tham gia ﾄ妥｡nh giﾃ｡.
+
+---
+
+# Giai ﾄ双蘯｡n 8 窶・Drift Budget
+
+Khﾃ｡i ni盻㍊ m盻嬖:
+
+```text
+Drift Budget
+```
+
+Vﾃｭ d盻･:
+
+```text
+Vision Drift Budget = 20
+
+Current Drift = 14
+```
+
+M盻擁 quy蘯ｿt ﾄ黛ｻ杵h trﾃ｡i founder directives:
+
+```text
++1
++2
++3 drift
+```
+
+N蘯ｿu vﾆｰ盻｣t ngﾆｰ盻｡ng:
+
+```text
+Founder Review Required
+```
+
+---
+
+# Giai ﾄ双蘯｡n 9 窶・Layer Founder
+
+Thﾃｪm layer cao nh蘯･t:
+
+```text
+.ai-founder/
+```
+
+---
+
+Bao g盻杜:
+
+```text
+VISION_LOCK.md
+
+NON_NEGOTIABLES.md
+
+INVESTMENT_THESES.md
+```
+
+---
+
+Vai trﾃｲ:
+
+```text
+Founder DNA
+
+Khﾃｴng ﾄ柁ｰ盻｣c vi ph蘯｡m.
+```
+
+---
+
+# Giai ﾄ双蘯｡n 10 窶・Domain Plugin
+
+M盻冲 phﾃ｡t hi盻㌻ r蘯･t quan tr盻肱g:
+
+Framework khﾃｴng nﾃｪn g蘯ｯn v盻嬖 domain.
+
+---
+
+Framework:
+
+```text
+AI Company Framework
+```
+
+---
+
+Domain:
+
+```text
+Trading AI
+Club Management
+SaaS
+E-Commerce
+Content Platform
+```
+
+---
+
+K蘯ｿt lu蘯ｭn:
+
+```text
+Framework s盻創g lﾃ｢u hﾆ｡n domain.
+
+Domain lﾃ plugin.
+```
+
+---
+
+# Giai ﾄ双蘯｡n 11 窶・V3 Core
+
+Ki蘯ｿn trﾃｺc cu盻訴 cﾃｹng ﾄ柁ｰ盻｣c ch盻奏.
+
+```text
+.ai-founder/
+
+.ai-company/
+
+.ai-runtime/
+
+.ai-execution/
+
+.ai-domains/
+
+reports/
+```
+
+---
+
+## .ai-founder
+
+```text
+VISION_LOCK
+
+NON_NEGOTIABLES
+
+INVESTMENT_THESES
+```
+
+---
+
+## .ai-company
+
+```text
+vision
+
+strategy
+
+user-council
+
+product-office
+
+cto-office
+
+board-room
+```
+
+---
+
+## .ai-runtime
+
+```text
+PROJECT_STATE
+
+CURRENT_SPRINT
+
+NEXT_ACTIONS
+
+DECISIONS
+
+BLOCKERS
+
+HANDOFF
+
+CONTEXT_HEALTH
+```
+
+---
+
+## .ai-execution
+
+```text
+ARCHITECTURE
+
+CODING_STANDARDS
+
+TESTING_STANDARDS
+
+DEPLOYMENT
+
+STACK_GUIDE
+```
+
+---
+
+## .ai-domains
+
+```text
+trading-ai
+
+club-management
+
+saas
+```
+
+---
+
+## reports
+
+```text
+board-review
+
+technical-debt
+
+maturity-score
+
+drift-ledger
+
+recovery-plan
+```
+
+---
+
+# Giai ﾄ双蘯｡n 12 窶・Trﾃ｡nh Overengineering
+
+M盻冲 c蘯｣nh bﾃ｡o cu盻訴 cﾃｹng:
+
+Chﾃｺng ta b蘯ｯt ﾄ黛ｺｧu ti蘯ｿn t盻嬖:
+
+```text
+Event System
+
+State Graph
+
+Workflow Engine
+
+Governance Engine
+```
+
+Nhﾆｰng quy蘯ｿt ﾄ黛ｻ杵h cu盻訴 cﾃｹng:
+
+```text
+KHﾃ年G BUILD NGAY.
+```
+
+Lﾃｽ do:
+
+```text
+Framework ﾄ疎ng scale nhanh hﾆ｡n nhu c蘯ｧu th盻ｱc t蘯ｿ.
+```
+
+---
+
+# Quy蘯ｿt ﾄ黛ｻ杵h cu盻訴 cﾃｹng
+
+Track A:
+
+```text
+Build Now
+```
+
+Xﾃ｢y d盻ｱng:
+
+```text
+AI Company Framework V3 Core
+```
+
+v盻嬖 kho蘯｣ng:
+
+```text
+20-25 files
+```
+
+---
+
+Track B:
+
+```text
+Future OS Spec
+```
+
+Ghi nh蘯ｭn ﾃｽ tﾆｰ盻殤g:
+
+```text
+Events
+State Graph
+Agent Registry
+Workflow Engine
+```
+
+trong:
+
+```text
+docs/AI_COMPANY_OS_V4_SPEC.md
+```
+
+---
+
+# Tri蘯ｿt lﾃｽ cu盻訴 cﾃｹng
+
+```text
+AI Company Framework
+khﾃｴng ph蘯｣i lﾃ:
+
+- Documentation System
+- Prompt Collection
+- Governance Simulator
+
+mﾃ lﾃ:
+
+M盻冲 Operating Framework
+
+giﾃｺp AI Agents vﾃ Founder
+duy trﾃｬ alignment dﾃi h蘯｡n,
+trﾃ｡nh context decay,
+trﾃ｡nh strategic decay,
+vﾃ bi蘯ｿn chi蘯ｿn lﾆｰ盻｣c thﾃnh hﾃnh ﾄ黛ｻ冢g,
+hﾃnh ﾄ黛ｻ冢g thﾃnh h盻皇 h盻淑.
+```

@@ -1,5 +1,10 @@
 # AI Company Framework V3
 
+[![NPM Version](https://img.shields.io/npm/v/create-ai-company.svg)](https://www.npmjs.com/package/create-ai-company)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Docs](https://img.shields.io/badge/docs-vitepress-blue)](https://thonguyen98vn.github.io/AI-Company-framework/)
+[![llms.txt](https://img.shields.io/badge/llms.txt-AI_Optimized-purple.svg)](/llms.txt)
+
 Welcome to the **AI Company Framework V3**. This framework turns any software repository into a self-governing, autonomous "AI-Native Company". 
 
 By establishing a structured hierarchy of **Governance**, **Memory**, and **Execution**, it allows AI Agents (like Cursor, GitHub Copilot, Cline, or Antigravity) to act as your C-level executives, product managers, and engineers without losing context or drifting from your original vision.
@@ -13,17 +18,13 @@ Standard AI tools lose context over long sessions. They don't know the differenc
 
 ## 🚀 Quick Start
 
-To apply the AI Company Framework to your project, simply run the installation script.
+The fastest way to initialize the framework in your project is via NPM:
 
-### For Windows (PowerShell):
-```powershell
-powershell -ExecutionPolicy Bypass -File install.ps1
-```
-
-### For Mac/Linux:
 ```bash
-./install.sh
+npx create-ai-company@latest
 ```
+
+*(You can also run it inside an existing project to inject the `.agents` brain without overwriting your code!)*
 
 ### Next Steps:
 1. Open your project in an AI-powered IDE (Cursor, VSCode with Copilot).
@@ -40,6 +41,8 @@ The framework operates via the `.agents` directory:
 - `.agents/ai-execution/`: The Factory. Coding standards, testing, and deployment rules.
 - `.agents/ai-domains/`: Specialized industry presets (SaaS, Data, Web3, etc.).
 - `docs/`: In-depth documentation on how to extend the framework.
+
+📚 **[Read the Full Documentation](https://thonguyen98vn.github.io/AI-Company-framework/)**
 
 ## 🤝 Contributing
 We welcome contributions! Please see `CONTRIBUTING.md` for details on how to add new Domain Presets or improve the core framework.
