@@ -1,0 +1,8 @@
+﻿---
+owner: QA_Agent
+review_cadence: monthly
+last_reviewed: 2026-06-18
+staleness_risk: low
+---
+# TESTING STANDARDS
+[Rules for QA and test coverage.]
