@@ -1,0 +1,22 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "events": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "timestamp": { "type": "string", "format": "date-time" },
+          "type": { "type": "string", "enum": ["HANDOFF_REQ", "AUDIT_REQ", "USER_BLOCK", "RELEASE_REQ", "FEEDBACK_RECEIVED"] },
+          "emitter_role": { "type": "string" },
+          "target_role": { "type": "string" },
+          "description": { "type": "string" },
+          "status": { "type": "string", "enum": ["PENDING", "ACKNOWLEDGED", "RESOLVED"] }
+        },
+        "required": ["timestamp", "type", "emitter_role", "target_role", "description", "status"]
+      }
+    }
+  },
+  "required": ["events"]
+}

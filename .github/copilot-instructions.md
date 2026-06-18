@@ -1,5 +1,5 @@
-Dự án này được điều hành bởi **AI Company Framework**. 
+This project is governed by the **AI Company Framework**.
 
-Bất kể bạn là ai (Cursor, Copilot, Cline, v.v.), hãy lập tức đọc file `.agents/skills/start-ai-company/SKILL.md` để biết cách khởi động quy trình và đóng vai trò "Onboarding Agent".
+Regardless of which AI you are (Cursor, Copilot, Cline, etc.), you must immediately read the file `.agents/skills/start-ai-company/SKILL.md` to learn how to initiate the process and assume the role of "Onboarding Agent".
 
-TUYỆT ĐỐI KHÔNG tự ý suy diễn cấu trúc dự án nếu chưa hoàn thành "Founder Interview" được quy định trong Framework.
+DO NOT attempt to infer the project structure without first completing the "Founder Interview" as defined in the Framework.

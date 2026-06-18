@@ -1,0 +1,30 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "owner": {
+      "type": "string",
+      "description": "The AI Agent role or human owner responsible for this file."
+    },
+    "review_cadence": {
+      "type": "string",
+      "enum": ["daily", "weekly", "monthly", "never"],
+      "description": "How often this file should be reviewed for staleness."
+    },
+    "last_reviewed": {
+      "type": "string",
+      "format": "date",
+      "description": "The date when this file was last reviewed (YYYY-MM-DD)."
+    },
+    "staleness_risk": {
+      "type": "string",
+      "enum": ["low", "medium", "high", "critical"],
+      "description": "The risk of this file becoming stale and causing project drift."
+    },
+    "status": {
+      "type": "string",
+      "description": "The current state/status represented in this document."
+    }
+  },
+  "required": ["owner", "review_cadence", "last_reviewed", "staleness_risk"]
+}

@@ -25,7 +25,7 @@ You are only authorized to answer standard programming requests AFTER `VISION_LO
 "@
 
 Write-Host "Downloading framework template from GitHub..."
-$zipUrl = "https://github.com/username/ai-company-framework/archive/refs/heads/main.zip"
+$zipUrl = "https://github.com/thonguyen98vn/AI-Company-framework/archive/refs/heads/main.zip"
 $zipFile = "ai-company-framework.zip"
 
 Invoke-WebRequest -Uri $zipUrl -OutFile $zipFile

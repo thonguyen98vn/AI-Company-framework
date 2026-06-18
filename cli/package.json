@@ -8,7 +8,8 @@
     "create-ai-company": "./bin/create-ai-company.js"
   },
   "scripts": {
-    "test": "vitest run"
+    "test": "vitest run",
+    "build:llms": "node ./bin/generate-llms.js"
   },
   "keywords": [
     "ai",

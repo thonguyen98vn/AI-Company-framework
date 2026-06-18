@@ -20,12 +20,29 @@ Instead of repeatedly asking the user what to do, you must rely on the `.agents`
 - **`CURRENT_SPRINT.md`**: Granular tasks you are working on right now.
 - **`HANDOFF.md`**: When stopping work, you leave context here for the next AI session to pick up.
 - **`EVENTS.md` & `STATE_GRAPH.md`**: The Event System for Multi-Agent async orchestration.
+- **`USER_FEEDBACK_LOG.md`**: Where all real user feedback is collected, categorized (BUG/FEATURE_REQUEST/UX_ISSUE/CONFUSION), and prioritized (P0-P3) before feeding back into the planning cycle.
 
 ### Layer 3: Execution (`.ai-execution/`, `reports/`)
 - **`ARCHITECTURE.md`**, **`CODING_STANDARDS.md`**: Strict guidelines on how to write code in this specific repo. Do not hallucinate external tech stacks.
 - **`reports/`**: Periodic AI Audit reports ensuring the codebase does not drift from the founder's vision.
 
-## 3. Agent Initialization Protocol
+## 3. The Complete Development Loop
+The framework operates as an infinite loop with 7 states:
+
+```
+UNINITIALIZED → INITIALIZED → PLANNING → EXECUTING → AUDITING → RELEASING → USER_FEEDBACK → PLANNING → ...
+```
+
+- **UNINITIALIZED → INITIALIZED**: Founder Interview captures vision into `VISION_LOCK.md`.
+- **PLANNING → EXECUTING**: Strategy becomes sprint tasks, agents write code.
+- **EXECUTING → AUDITING**: Code is reviewed against `NON_NEGOTIABLES.md`.
+- **AUDITING → RELEASING**: Audit passes, version is shipped to users.
+- **RELEASING → USER_FEEDBACK**: Real users test and provide feedback.
+- **USER_FEEDBACK → PLANNING**: Feedback is categorized, prioritized, and fed into the next planning cycle.
+
+This loop ensures the AI never operates in a vacuum — real user voices always shape the next iteration.
+
+## 4. Agent Initialization Protocol
 If the `.ai-founder/VISION_LOCK.md` status is `UNINITIALIZED`, you MUST pause all coding tasks and conduct a "Founder Interview" with the user. Ask them for the Core Mission, Target Audience, and Non-negotiables.
 
 ## Deep Reading

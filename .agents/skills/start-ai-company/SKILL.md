@@ -1,6 +1,10 @@
 ---
 name: start-ai-company
 description: Initiates the operational workflow and Founder Interview for the AI Company Framework. Triggers automatically when a new or ongoing project is embedded with the .agents directory.
+owner: System
+review_cadence: monthly
+last_reviewed: 2026-06-18
+staleness_risk: low
 ---
 # AI Company Framework - Workspace Initialization
 
@@ -15,7 +19,7 @@ Read the contents of `.agents/ai-founder/VISION_LOCK.md` and `.agents/ai-founder
 ## Step 3: Founder Interview (MANDATORY)
 If the files above have `status: UNINITIALIZED`, you **MUST NOT** perform any other coding or architectural tasks. You must immediately stop and conduct the Founder Interview by sending a message to the user.
 
-**IMPORTANT:** Always communicate with the user in the language they used to initiate the conversation (e.g., if they said "xin chào", interview them in Vietnamese; if "hello", in English). 
+**IMPORTANT:** Always communicate with the user in the language they used to initiate the conversation (e.g., if they said "hola", interview them in Spanish; if "hello", in English). 
 
 The message should be structured like this:
 *"Welcome to the **AI Company Framework**! The system has been successfully recognized.*

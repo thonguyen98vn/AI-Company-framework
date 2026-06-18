@@ -15,3 +15,4 @@ When reading this file, Agents should check for any unacknowledged events direct
 | Timestamp | Event Type | Emitter Role | Target Role | Description | Status |
 |-----------|------------|--------------|-------------|-------------|--------|
 | 2026-06-18 | `INIT` | `System` | `All` | Framework initialized | `ACKNOWLEDGED` |
+| 2026-06-18 | `HANDOFF_REQ` | `System` | `All` | State transitioned from UNINITIALIZED to PLANNING. Reason: Automated transition | `ACKNOWLEDGED` |

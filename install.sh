@@ -1,7 +1,7 @@
 #!/bin/bash
 # AI Company Framework Installer (Mac/Linux)
 
-REPO_URL="https://github.com/username/ai-company-framework"
+REPO_URL="https://github.com/thonguyen98vn/AI-Company-framework"
 BRANCH="main"
 
 echo "🚀 Installing AI Company Framework..."
@@ -27,7 +27,7 @@ You are only authorized to answer standard programming requests AFTER `VISION_LO
 EOF
 
 echo "Downloading framework template from GitHub..."
-ZIP_URL="https://github.com/username/ai-company-framework/archive/refs/heads/main.zip"
+ZIP_URL="https://github.com/thonguyen98vn/AI-Company-framework/archive/refs/heads/main.zip"
 ZIP_FILE="ai-company-framework.zip"
 
 curl -sL $ZIP_URL -o $ZIP_FILE

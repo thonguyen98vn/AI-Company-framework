@@ -1,6 +1,10 @@
 ---
 name: event-handler
 description: Handles transitions in STATE_GRAPH.md and processes messages in EVENTS.md. Run this skill when you need to change project states or when you see unacknowledged events in the Event Log.
+owner: System
+review_cadence: monthly
+last_reviewed: 2026-06-18
+staleness_risk: low
 ---
 # Event Handler Skill
 

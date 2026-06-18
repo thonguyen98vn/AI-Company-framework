@@ -1,0 +1,25 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "current_state": {
+      "type": "string",
+      "enum": ["UNINITIALIZED", "INITIALIZED", "PLANNING", "EXECUTING", "AUDITING", "RELEASING", "USER_FEEDBACK"],
+      "description": "The current overall state of the project."
+    },
+    "transitions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "timestamp": { "type": "string", "format": "date-time" },
+          "from": { "type": "string" },
+          "to": { "type": "string" },
+          "reason": { "type": "string" }
+        },
+        "required": ["timestamp", "from", "to", "reason"]
+      }
+    }
+  },
+  "required": ["current_state"]
+}

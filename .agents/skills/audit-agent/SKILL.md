@@ -1,6 +1,10 @@
 ---
 name: audit-agent
 description: Automatically audits the codebase against the NON_NEGOTIABLES.md and generates a compliance report in .agents/reports/.
+owner: System
+review_cadence: monthly
+last_reviewed: 2026-06-18
+staleness_risk: low
 ---
 # Audit Agent Skill
 

@@ -3,7 +3,7 @@
 This document tracks the high-level operational state of the project. AI Agents use this state to determine their current responsibilities and behavior.
 
 ## Current State
-**STATUS:** `UNINITIALIZED`
+**STATUS:** `PLANNING`
 
 ## Allowed States
 1. **UNINITIALIZED**: The project has just been scaffolded. AI Agents MUST intercept all requests and initiate the Founder Interview to define `VISION_LOCK.md`.

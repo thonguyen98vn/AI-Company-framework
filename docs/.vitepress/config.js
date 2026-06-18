@@ -2,7 +2,7 @@ import { defineConfig } from 'vitepress'
 
 export default defineConfig({
   title: "AI Company Framework",
-  description: "Biến IDE của bạn thành một Công ty AI tự vận hành",
+  description: "Turn your IDE into a self-governing AI company",
   themeConfig: {
     nav: [
       { text: 'Home', link: '/' },
@@ -10,7 +10,7 @@ export default defineConfig({
     ],
     sidebar: [
       {
-        text: 'Giới thiệu',
+        text: 'Introduction',
         items: [
           { text: 'Getting Started', link: '/getting-started' },
           { text: 'Architecture', link: '/architecture' },

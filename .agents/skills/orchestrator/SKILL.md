@@ -1,6 +1,10 @@
 ---
 name: orchestrator
 description: Orchestrates complex tasks by breaking them down and assigning them to Subagents (Coders, Reviewers, etc.) or logging them in EVENTS.md.
+owner: System
+review_cadence: monthly
+last_reviewed: 2026-06-18
+staleness_risk: low
 ---
 # Orchestrator Skill
 
