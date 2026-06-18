@@ -1,11 +1,14 @@
 {
-  "name": "create-ai-company",
+  "name": "@thonn/create-ai-company",
   "version": "3.0.0",
   "description": "CLI to scaffold AI Company Framework V3 Core",
   "main": "index.js",
   "type": "module",
+  "publishConfig": {
+    "access": "public"
+  },
   "bin": {
-    "create-ai-company": "./bin/create-ai-company.js"
+    "create-ai-company": "bin/create-ai-company.js"
   },
   "scripts": {
     "test": "vitest run",
@@ -27,7 +30,7 @@
   "author": "thonguyen98vn",
   "repository": {
     "type": "git",
-    "url": "https://github.com/thonguyen98vn/AI-Company-framework.git"
+    "url": "git+https://github.com/thonguyen98vn/AI-Company-framework.git"
   },
   "license": "MIT",
   "dependencies": {

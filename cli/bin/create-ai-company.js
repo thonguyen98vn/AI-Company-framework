@@ -852,13 +852,95 @@ program
         console.log(`  ${chalk.gray('Focus:')} ${phase.focus}`);
       }
       if (phase.milestones && phase.milestones.length > 0) {
-        console.log(`  ${chalk.gray('Key Milestones:')}`);
+        console.log(chalk.gray('  Key Milestones:'));
         phase.milestones.forEach(m => {
           console.log(`    - ${m}`);
         });
       }
       console.log('');
     });
+  });
+
+program
+  .command('test')
+  .description('Run codebase tests and log results/events to the framework')
+  .option('-w, --watch', 'Watch files and re-run tests in a loop')
+  .option('-i, --interval <ms>', 'Loop interval in milliseconds (default: 10000) for polling mode', '10000')
+  .action(async (options) => {
+    const watchMode = options.watch;
+    const interval = parseInt(options.interval, 10);
+    const { events: eventsPath } = getRuntimePaths();
+    
+    console.log(chalk.blue('🧪 Running Automated Test Suite...\n'));
+    
+    const runTests = async () => {
+      console.log(chalk.gray(`[${new Date().toLocaleTimeString()}] Executing test suite...`));
+      
+      let testCommand = 'npm test';
+      let cwd = process.cwd();
+      
+      if (fs.existsSync(path.join(cwd, 'cli', 'package.json'))) {
+        cwd = path.join(cwd, 'cli');
+      }
+      
+      try {
+        const { stdout } = await execPromise(testCommand, { cwd });
+        console.log(chalk.green('✅ All tests passed successfully!'));
+        
+        writeTestReport(true, stdout);
+        
+        appendEventMarkdown(eventsPath, {
+          type: 'TEST_PASS',
+          emitter_role: 'Tester_Agent',
+          target_role: 'All',
+          description: 'Automated test suite passed successfully.',
+          status: 'ACKNOWLEDGED'
+        });
+        
+        return true;
+      } catch (error) {
+        console.log(chalk.red('❌ Tests failed!'));
+        const errorLog = error.stdout || error.message;
+        console.error(chalk.gray(errorLog));
+        
+        writeTestReport(false, errorLog);
+        
+        appendEventMarkdown(eventsPath, {
+          type: 'TEST_FAIL',
+          emitter_role: 'Tester_Agent',
+          target_role: 'Coder',
+          description: `Automated test suite failed. Error: ${error.message.substring(0, 100)}...`,
+          status: 'UNACKNOWLEDGED'
+        });
+        
+        return false;
+      }
+    };
+    
+    const writeTestReport = (success, log) => {
+      const dateStr = new Date().toISOString().split('T')[0];
+      const reportsDir = path.join(process.cwd(), '.agents', 'reports');
+      if (!fs.existsSync(reportsDir)) fs.mkdirSync(reportsDir, { recursive: true });
+      
+      const reportPath = path.join(reportsDir, `${dateStr}-test.md`);
+      let reportContent = `# Test Run Report - ${dateStr}\n\n`;
+      reportContent += `**Status**: ${success ? 'PASS' : 'FAIL'}\n`;
+      reportContent += `**Timestamp**: ${new Date().toISOString()}\n\n`;
+      reportContent += `## Test Execution Log\n\`\`\`\n${log}\n\`\`\`\n`;
+      
+      fs.writeFileSync(reportPath, reportContent, 'utf8');
+    };
+    
+    await runTests();
+    
+    if (watchMode) {
+      console.log(chalk.cyan(`\nWatching/polling for test changes every ${interval}ms. Press Ctrl+C to exit...\n`));
+      setInterval(async () => {
+        await runTests();
+      }, interval);
+      
+      await new Promise(() => {});
+    }
   });
 
 program.parseAsync(process.argv);

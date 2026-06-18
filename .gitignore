@@ -32,3 +32,7 @@ Thumbs.db
 # Temp files
 ai-framework-temp/
 ai-company-framework.zip
+
+# NPM Local Configuration
+.npmrc
+**/.npmrc

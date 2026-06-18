@@ -219,6 +219,13 @@ export default function Home() {
                 >
                   💬 Collect Feedback
                 </button>
+                <button 
+                  className="btn-action" 
+                  disabled={actionLoading}
+                  onClick={() => handleEventAction('TEST_REQ', 'Automated test suite run requested from Dashboard UI', 'tester-agent')}
+                >
+                  🧪 Run Test Suite
+                </button>
                 
                 <div style={{ display: 'flex', gap: '0.5rem', gridColumn: '1 / -1', marginTop: '0.5rem' }}>
                   <select 
